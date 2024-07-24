@@ -1,3 +1,4 @@
+const axios = require('axios');
 
 
 document.getElementById('transactionForm').addEventListener('submit', async function(e) {
@@ -7,16 +8,21 @@ document.getElementById('transactionForm').addEventListener('submit', async func
     const type = document.getElementById('type').value;
 
     try {
-        const response = await fetch('http://localhost:3000/transaction', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ userId, amount, type })
-        });
+        
+        const response= await axios.post('http://localhost:3000/transaction',{
 
-        const result = await response.json();
-        document.getElementById('result').textContent = result.message || result.error;
+            body: { userId:2, amount:100, type:"deposit" },
+            
+            headers: {
+                'Content-Type': 'application/json'
+              }          
+
+          });
+          console.log(response);
+          
+
+        
+        document.getElementById('result').textContent = response.data || response.error;
     } catch (error) {
         document.getElementById('result').textContent = 'Error processing transaction';
     }

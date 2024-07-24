@@ -1,3 +1,3 @@
-##FINTECH PROJECT
+##FINTECH PROJECT##
 
 In progress

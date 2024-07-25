@@ -98,7 +98,8 @@ app.post('/check-user', async (req, res) => {
     const query = `
         query ($username: String!, $password: String!) {
             users(where: {username: {_eq: $username}, password: {_eq: $password}}) {
-                id
+                id,
+                name
             }
         }
     `;
@@ -125,7 +126,9 @@ app.post('/check-user', async (req, res) => {
         
 
         if (response.data.data.users.length > 0) {
-            res.status(200).json({ success: true, message: 'User authenticated successfully' });
+            
+            
+            res.status(200).json({ success: true, message: 'User authenticated successfully',id:response.data.data.users[0].id,name:response.data.data.users[0].name });
         } else {
             res.status(401).json({ success: false, message: 'Invalid username or password' });
         }

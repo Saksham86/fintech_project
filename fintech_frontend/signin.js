@@ -20,7 +20,12 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         const result = await response.json();
         
         if (response.ok) {
+            //console.log(result);
+            localStorage.setItem("id", result.id);
+            localStorage.setItem("name",result.name);
+            
             messageDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
+
             window.location.href = 'dashboard.html';  // Redirect to dashboard
         } else {
             messageDiv.innerHTML = `<p style="color: red;">${result.message}</p>`;

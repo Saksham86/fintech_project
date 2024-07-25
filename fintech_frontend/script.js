@@ -1,10 +1,17 @@
+const userID=document.getElementById('userid');
+const userId = localStorage.getItem("id");
+    const userName=localStorage.getItem("name");
+    userID.innerHTML=`<p> ${userId}:- ${userName} </p>`;
 document.getElementById('transactionForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     
-    const userId = document.getElementById('userId').value;
+    
+    
     const amount = document.getElementById('amount').value;
     const type = document.getElementById('type').value;
     const resultDiv = document.getElementById('result');
+   
+   
     
     try {
         const response = await fetch('http://localhost:3000/transaction', {

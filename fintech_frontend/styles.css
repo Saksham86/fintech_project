@@ -1,17 +1,133 @@
+/* styles.css */
+
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #2e3d58;
+    color: white;
 }
-.container {
-    max-width: 600px;
-    margin: auto;
-}
-form {
-    margin-bottom: 20px;
-}
-input, button {
-    display: block;
+
+header {
+    background-color: #2e3d58;
+    padding: 10px 0;
+    position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #cfd9e1;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3e4a62;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 30px;
+}
+
+.dropdown-content li {
     padding: 10px;
-    margin: 10px 0;
+}
+
+.dropdown-content li a {
+    color: #cfd9e1;
+}
+
+.dropdown-content li a:hover {
+    background-color: #575f72;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.get-started-btn {
+    background-color: #57b7e4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.get-started-btn:hover {
+    background-color: #4aa7d3;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.watch-video-btn {
+    display: flex;
+    align-items: center;
+    color: #cfd9e1;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.watch-video-btn img {
+    margin-right: 10px;
+}
+
+.hero-image img {
+    max-width: 100%;
 }

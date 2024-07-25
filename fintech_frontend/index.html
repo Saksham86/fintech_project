@@ -1,27 +1,41 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" />
-    <title>Fintech Platform</title>
-   
+    <title>WALLET APP</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Fintech Platform</h1>
-        <form id="transactionForm">
-            <input type="number" id="userId" placeholder="User ID" required>
-            <input type="number" id="amount" placeholder="Amount" required>
-            <select id="type" required>
-                <option value="deposit">Deposit</option>
-                <option value="withdrawal">Withdrawal</option>
-            </select>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="result"></div>
-    </div>
-    <script src="script.js"> </script>
+    <header>
+        <nav>
+            <div class="logo">WALLET APP</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Pricing</a></li>
+                
+                <li><a href="#">Contact</a></li>
+            </ul>
+           
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>A Secure Wallet for your Money</h1>
+           
+            <div class="hero-buttons">
+                <button class="get-started-btn"><a href="signup.html" class="get-started-btn">Sign UP</a></button>
+                <button class="get-started-btn"><a href="signin.html" class="get-started-btn">Sign IN</a></button>
+                
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="image.png" alt="Hero Image">
+        </div>
+    </section>
 </body>
 </html>

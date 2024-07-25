@@ -1,29 +1,44 @@
-const axios = require('axios');
-
-
-document.getElementById('transactionForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+document.getElementById('transactionForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
     const userId = document.getElementById('userId').value;
-    const amount = parseFloat(document.getElementById('amount').value);
+    const amount = document.getElementById('amount').value;
     const type = document.getElementById('type').value;
-
+    const resultDiv = document.getElementById('result');
+    
     try {
-        
-        const response= await axios.post('http://localhost:3000/transaction',{
-
-            body: { userId:2, amount:100, type:"deposit" },
-            
+        const response = await fetch('http://localhost:3000/transaction', {
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
-              }          
-
-          });
-          console.log(response);
-          
-
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userId: userId,
+                amount: amount,
+                type: type,
+            }),
+        });
         
-        document.getElementById('result').textContent = response.data || response.error;
+        const result = await response.json();
+        
+        if (response.ok) {
+            resultDiv.innerHTML = `<p style="color: green;">Transaction successful: ${result.message}</p>`;
+            setTimeout(()=>{
+                resultDiv.innerHTML = `<div></div>`
+
+            },5000)
+            alert("Transaction Success")
+        } else {
+            resultDiv.innerHTML = `<p style="color: red;">Transaction failed: ${result.message}</p>`;
+            alert("Transaction Failed");
+            setTimeout(()=>{
+                resultDiv.innerHTML = `<div></div>`
+
+            },5000)
+            
+        }
     } catch (error) {
-        document.getElementById('result').textContent = 'Error processing transaction';
+        resultDiv.innerHTML = `<p style="color: red;">Internal server error. Please try again later.</p>`;
+        console.error('Error:', error);
     }
 });

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Fintech Platform</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Fintech Platform</h1>
+        <form id="transactionForm">
+            <div class="input-group">
+                <input type="number" id="userId" placeholder="User ID" required>
+            </div>
+            <div class="input-group">
+                <input type="number" id="amount" placeholder="Amount" required>
+            </div>
+            <div class="input-group">
+                <select id="type" required>
+                    <option value="deposit">Deposit</option>
+                    <option value="withdrawal">Withdrawal</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

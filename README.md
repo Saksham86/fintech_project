@@ -12,10 +12,12 @@
 ### Steps to setup the Project Database:-
 * Step 1:- make a postgreSQL database with NEON
 * Step 2:- setup HASURA CLOUD with NEON
-* Step 3:- make 2 tables users and transactions
-* Step 4:- users should have an id,name,username,password,balance coloumn
-* Step 5:- transactions should have id, user-id (relational to users id),amount,type,created-at coloumn
-* Step 6:- add some demo users in your database
+* Step 3:- make a config.js file in your fintech_backend folder and assign two constants HASURA_URL to your HASURA endpoint and HASURA_SECRET to your HASURA authentication header.
+* Step 4:- export these 2 constants from config.js 
+* Step 5:- make 2 tables users and transactions
+* Step 6:- users should have an id,name,username,password,balance coloumn
+* Step 7:- transactions should have id, user-id (relational to users id),amount,type,created-at coloumn
+* Step 8:- add some demo users in your database
 
 ## Steps to test the Project:- 
 * Open fintech_backend folder in your terminal run 'node index.js' to boot up your server

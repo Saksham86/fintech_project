@@ -15,8 +15,6 @@ const {HASURA_SECRET,HASURA_URL}=require("./config.js")
 app.use(cors());
 app.use(express.json());
 
-// const HASURA_URL="https://romantic-starfish-35.hasura.app/v1/graphql";
-// const HASURA_SECRET="RjO69h57sWs1vyn1nThWowtr69JuN4SkBobZVB7giXZsxoESiNC48EEeLTSSBPtn";
 
 
 
@@ -123,9 +121,7 @@ app.post('/check-user', async (req, res) => {
                     'x-hasura-admin-secret': HASURA_SECRET,
                 },
             }
-        );
-
-       
+        );    
         
 
         if (response.data.data.users.length > 0) {

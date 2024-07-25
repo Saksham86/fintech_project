@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const cors=require('cors');
 const app = express();
+const {HASURA_SECRET,HASURA_URL}=require("./config.js")
 
 
 
@@ -14,8 +15,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const HASURA_URL="https://romantic-starfish-35.hasura.app/v1/graphql";
-const HASURA_SECRET="RjO69h57sWs1vyn1nThWowtr69JuN4SkBobZVB7giXZsxoESiNC48EEeLTSSBPtn";
+// const HASURA_URL="https://romantic-starfish-35.hasura.app/v1/graphql";
+// const HASURA_SECRET="RjO69h57sWs1vyn1nThWowtr69JuN4SkBobZVB7giXZsxoESiNC48EEeLTSSBPtn";
 
 
 
